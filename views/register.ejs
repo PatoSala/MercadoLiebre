@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercadoliebre-Register</title>
+</head>
+<body>
+    <form action="register.ejs" method="POST">
+        <label for="FullName">Nombre y Apellido</label>
+        <input type="text" name="FullName">
+        <br>
+        <label for="UserName">Nombre de Usuario</label>
+        <input type="text" name="UserName">
+        <br>
+        <label for="email">Dirección de correo</label>
+        <input type="email" name="email">
+        <br>
+        <label for="Birth-date">Fecha de Nacimiento</label>
+        <input type="date" name="Birth-date">
+        <br>
+        <label for="Address">Domicilio</label>
+        <input type="text" placeholder="Calle 1">
+        <input type="number" placeholder="Altura">
+        <br>
+        <input type="text" placeholder="Calle 2 (Opcional)">
+        <input type="number" placeholder="Código Postal">
+        <br>
+        <label>Perfil de usuario</label>
+        <select name="Perfil de usuario">
+            <option name="Vendedor">Vendedor</option>
+            <option name="Comprador">Comprador</option>
+        </select>
+        <br>
+        <label>Categorías de ínteres</label>
+        <br>
+        <input type="checkbox" name="Electro" value="Elcetro">
+        <br>
+        <input type="checkbox" name="Moda" value="Moda">
+        <br>
+        <input type="checkbox" name="Hogar" value="Hogar">
+        <br>
+        <input type="checkbox" name="Juguetría" value="Juguetería">
+        <br>
+        <input type="checkbox" name="Vida Sana" value="VidaSana">
+        <br>
+        <label>Foto de Perfil</label>
+        <br>
+        <label for="password">Contraseña</label>
+        <input type="password" name="password" placeholder="Password">
+        <br>
+        <label for="confirm-password">Confirm Password</label>
+        <input type="password" name="confirm-password" placeholder="Password">
+    </form>
+</body>
+</html>

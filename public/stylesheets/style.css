@@ -1,0 +1,25 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.header {
+    background-color: #EAC926;
+}
+
+.header p {
+    margin-left: 30px;
+}
+
+.header i {
+    color: black;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.precios, i {
+    color: #39b54a;;
+}
+
+
