@@ -1,7 +1,10 @@
+const fs = require('fs');
+let products = JSON.parse(fs.readFileSync(__dirname + '/../database/products.json'));
+
 const productosController = {
 
     index: (req, res) => {
-    res.send("listado de productos");
+    res.render('productList.ejs');
     },
 
     show: (req, res) => {
@@ -9,15 +12,26 @@ const productosController = {
     },
 
     create: (req, res) => {
-    res.send("crear productos");
+    res.render('products/addProduct');
+    },
+
+    store: (req, res) => {
+        products.push(req.body);
+        productsJSON = JSON.stringify(products);
+        fs.writeFileSync(__dirname + '/../database/products.json', productsJSON);
+        res.send('Producto creado');
     },
 
     edit: (req, res) => {
-    res.send("editar producto " + req.params.idProducto);
+    res.render('products/editProduct', {userFound});
+    },
+
+    update: (req, res) => {
+        res.send('producto editado');
     },
 
     delete: (req, res) => {
-    res.send("eliminar producto " + req.params.idProducto);
+    res.send('Producto eliminado');
     },
 
 };

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+</head>
+<body>
+    <h1>Añadir producto</h1>
+
+    <form action="/products/create" method="POST">
+        <input type="number" name="id" placeholder="id" value="">
+        <br>
+        <input type="text" name="name" placeholder="Nombre del producto" value="">
+        <br>
+        <input type="text" name="price" placeholder="$$$" value="">
+        <br>
+        <input type="text" name="category" placeholder="Categoría" value="">
+        <br>
+        <input type="text" name="description" placeholder="Decripción del producto" value="">
+        <br>
+        <button type="submit">Añadir</button>
+    </form>
+</body>
+</html>
