@@ -1,0 +1,41 @@
+<header>
+    <div class="top">
+        <div class="img">
+            <img src="/../images/logo-mercado-liebre.svg">
+        </div>
+
+        <div class="searchBar">
+            <input type="search" placeholder="Buscar productos, marcas y más...">
+            <button type="submit"><i class="fas fa-search"></i></button> 
+        </div>
+
+        <div class="img2">
+            <img src="/../images/mla-menu-desktop-notification-picture-52b026dd-9270-4c0f-8b85-a7526d0b3a63.png">
+        </div>
+
+    </div>
+
+    <div class="bot">
+        <ul class="nav1">
+            <li><a href="url">Categorías</a></li>
+            <li><a href="url">Ofertas</a></li>
+            <li><a href="url">Tiendas Oficiales</a></li>
+            <li><a href="url">Vender</a></li>
+            <li><a href="url">Ayuda</a></li>
+        </ul>
+
+        <ul class="nav2">
+            <% if (req.session.userLogged != undefined) { %>
+                <li><a href="/users/<%= req.session.userLogged.id %>">Perfil</a> <i class="fa fa-user-circle"></i></li>
+                <li><a href="">Favoritos</a> <i class="fas fa-star"></i></li>
+                <li><a href="/users/cart/<%= req.session.userLogged.id %>">Carrito</a> <i class="fa fa-shopping-cart"></i></li>  
+            <% } else { %>
+                <li><a href="/users/register">Creá tu cuenta</a> <i class="fa fa-id-card"></i></li>
+                <li><a href="/users/login">Ingresá</a> <i class="fa fa-sign-in-alt"></i></li>
+                <li><a href="/users/cart/:id">Mis compras</a> <i class="fa fa-shopping-cart"></i></li>
+            <% } %>
+        </ul>
+
+    </div>
+    
+</header>

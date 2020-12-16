@@ -22,8 +22,11 @@ router.post('/delete/:id', usersController.delete);
 router.get('/login', usersController.loginForm);
 router.post('/login', usersController.login);
 
+/* logOut */
+router.post('/logout', usersController.logOut);
+
 /* carrito */
-router.get('/cart', authMiddlewere, usersController.cart);
+router.get('/cart/:id', authMiddlewere, usersController.cart);
 
 /* check */
 router.get('/check', (req, res) => {
@@ -33,5 +36,8 @@ router.get('/check', (req, res) => {
     res.send('nadie inició sesión')
   }
 });
+
+/* perfil */
+router.get('/:id', usersController.show);
 
 module.exports = router;

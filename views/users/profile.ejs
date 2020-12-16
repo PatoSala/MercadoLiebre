@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+    <title>Tu Perfil</title>
+</head>
+<body>
+    <h1>¡Hola <%= req.session.userLogged.name %>!</h1>
+    <br>
+    <form action="/users/logout" method="POST">
+        <button type="submit">Log Out</button>
+    </form>
+    <form action="/users/cart/<%= req.session.userLogged.id %>" method="GET">
+        <button type="submit">Carrito</button>
+    </form>
+    <form action="/products/create" method="GET">
+        <button type="submit">Publicar</button>
+    </form>
+</body>
+</html>

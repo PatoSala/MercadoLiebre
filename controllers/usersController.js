@@ -2,6 +2,7 @@ const { v4: uuidv4 } = require('uuid');
 const bcrypt = require('bcrypt');
 const fs = require('fs');
 let users = JSON.parse(fs.readFileSync(__dirname + '/../database/users.json'));
+let cart = JSON.parse(fs.readFileSync(__dirname + '/../database/cart.json'));
 
 const usersController = {
 
@@ -99,7 +100,20 @@ const usersController = {
     },
 
     cart: (req, res) => {
-        res.send('Carrito de ' + req.session.userLogged.name)
+        res.render('users/productCart', {req})
+    },
+
+    productCart: (req, res) => {
+        
+    },
+
+    show: (req, res) => {
+        res.render('users/profile', {req});
+    },
+
+    logOut: (req, res) => {
+        req.session.userLogged = undefined;
+        res.redirect('/');
     },
 };
 

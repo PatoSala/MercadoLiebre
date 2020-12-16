@@ -1,0 +1,95 @@
+header {
+    background: #EAC926;
+    flex-direction: row;
+    
+}
+
+div.top {
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    display: flex;
+    background: #EAC926;
+    height: 50px;
+    
+};
+
+.img {
+    max-width: 134px;
+    max-height: 34px;
+    
+}
+
+.img img {
+    margin-left: 50px;
+    width: 134px;
+    height: 34px;
+
+}
+
+.top input {
+    background: whitesmoke;
+    margin-left: 50px;
+    width: 576px;
+    height: 39px;
+    border: 0px;
+    box-shadow: 1px 1px 5px grey;
+}
+
+.top button {
+    background: whitesmoke;
+    box-shadow: 1px 1px 5px grey;
+    border: 0px;
+    width: 40px;
+    height: 39px;
+}
+
+.img2 {
+    max-width: 340px;
+    max-height: 39px;
+}
+
+.img2 img {
+    margin-left: 40px;
+    max-width: 340px;
+    max-height: 39px;
+}
+
+.bot {
+    height: 52px;
+    background: #EAC926;
+    display: flex;
+}
+
+.bot ul {
+    display: flex;
+    font-size: 15px;
+    flex-direction: row;
+    margin-bottom: 8px;
+    margin-left: 180px;
+    
+}
+
+.bot .nav1 a {
+    margin-left: 30px;
+    text-decoration: none;
+    color: #4e4c4c;
+}
+
+.nav2 {
+    margin-right: 30px;
+}
+
+.bot .nav2 a {
+    color: #363232;
+    text-decoration: none;
+    margin-left: 30px;
+}
+
+.nav1 a:hover {
+    color: black;
+}
+
+.nav2 a:hover {
+    color: black;
+}
