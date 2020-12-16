@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Product</title>
+    <title>Edit Product</title>
 </head>
 <body>
     <h1>Editar producto: <%= productFound.name %></h1>
 
-    <form action="/products/edit/<%= productFound.id %> method="POST">
+    <form action="/products/edit/<%= productFound.id %>" method="POST">
         <input type="text" name="name" placeholder="Nombre del producto" value="<%= productFound.name %>">
         <br>
         <input type="text" name="price" placeholder="$$$" value="<%= productFound.price %>">
         <br>
-        <input type="text" name="category" placeholder="Categoría" value="<%= productFound.category %>">
+        <input type="text" name="cat" placeholder="Categoría" value="<%= productFound.cat %>">
         <br>
-        <input type="text" name="description" placeholder="Decripción del producto" value="<%= productFound.description %>">
+        <input type="text" name="desc" placeholder="Decripción del producto" value="<%= productFound.desc %>">
         <br>
-        <button type="submit">Añadir</button>
+        <button type="submit">Aplicar Cambios</button>
     </form>
 </body>
 </html>

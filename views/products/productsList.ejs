@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Listado de productos</h1>
+
+    <ul>
+        <% for (let i = 0; i < products.length; i++) { %>
+            <li>id: <%= products[i].id %>
+                <br>
+                Producto: <%= products[i].name %>
+                <br>
+                Precio: <%= products[i].price %>
+                <br>
+                Categoría: <%= products[i].cat %>
+                <br>
+                Descripción: <%= products[i].desc %>
+                <br>
+                <form method="GET" action="/products/edit/ <%= products[i].id %>">
+                    <button type="submit">Edit</button>
+                </form>
+                <form method="POST" action="/products/delete/ <%= products[i].id %>">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+        <% } %>
+    </ul>
+
+</body>
+</html>

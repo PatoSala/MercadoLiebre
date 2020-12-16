@@ -1,20 +1,18 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router(); 
 
 //requerimos el controlador correspondiente a el recurso
-const productosController = require("../controllers/productosController.js");
+const productsController = require("../controllers/productsController.js");
 
 //definimos con propiedad del controlador 
-router.get("/", productosController.index);
+router.get('/list', productsController.list);
 
-router.get("/:idProducto?", productosController.show);
+router.get('/create', productsController.create);
+router.post('/create', productsController.store);
 
-router.get("/create", productosController.create);
-router.post('/create', productosController.store);
+router.get('/edit/:id', productsController.edit);
+router.post('/edit/:id', productsController.update);
 
-router.get('/edit/:idProducto', productosController.edit);
-router.post('/edit/:idProducto', productosController.update);
-
-router.post('/delete/:idProducto', productosController.delete);
+router.post('/delete/:id', productsController.delete);
 
 module.exports = router;
