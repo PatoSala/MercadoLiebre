@@ -8,6 +8,11 @@
     <title>Tu Perfil</title>
 </head>
 <body>
+
+    <%- include ../partials/header %>
+
+    <%- include ../partials/mobileHeader %>
+
     <h1>¡Hola <%= req.session.userLogged.name %>!</h1>
     <br>
     <form action="/users/logout" method="POST">

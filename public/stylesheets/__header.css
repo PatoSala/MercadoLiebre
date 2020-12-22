@@ -4,27 +4,24 @@ header {
     
 }
 
-div.top {
-    width: 100%;
-    flex-wrap: wrap;
-    align-items: center;
-    display: flex;
-    background: #EAC926;
-    height: 50px;
-    
-};
-
-.img {
-    max-width: 134px;
-    max-height: 34px;
-    
+.mobileHeader {
+    display: none;
 }
 
-.img img {
+.top {
     margin-left: 50px;
-    width: 134px;
-    height: 34px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    background: #EAC926;
+    height: 50px;
+};
 
+
+.top .logo {
+    
 }
 
 .top input {
@@ -33,6 +30,7 @@ div.top {
     width: 576px;
     height: 39px;
     border: 0px;
+    border-radius: 5px;
     box-shadow: 1px 1px 5px grey;
 }
 
@@ -40,6 +38,7 @@ div.top {
     background: whitesmoke;
     box-shadow: 1px 1px 5px grey;
     border: 0px;
+    border-radius: 5px;
     width: 40px;
     height: 39px;
 }
@@ -47,12 +46,7 @@ div.top {
 .img2 {
     max-width: 340px;
     max-height: 39px;
-}
-
-.img2 img {
-    margin-left: 40px;
-    max-width: 340px;
-    max-height: 39px;
+    margin-left: 50px;
 }
 
 .bot {
@@ -93,3 +87,4 @@ div.top {
 .nav2 a:hover {
     color: black;
 }
+

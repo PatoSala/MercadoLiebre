@@ -1,0 +1,27 @@
+<div class="mobileHeader">
+    <div class="top">
+        <img class="logo" src="/../images/logo-mercado-liebre.svg">
+    </div>
+
+    <div class="mid">
+        <input type="search" placeholder="Buscar productos, marcas y más...">
+    </div>
+
+    <div class="bot">
+        <ul>
+            <% if (req.session.userLogged != undefined) { %>
+                <li><a href="/users/<%= req.session.userLogged.id %>">Pérfil</a> <i class="far fa-user-circle"></i></li>
+                <br>
+                <li><a href="">Favoritos</a> <i class="far fa-star"></i></li>
+                <br>
+                <li><a href="/users/cart/<%= req.session.userLogged.id %>">Carrito</a> <i class="fas fa-shopping-cart"></i></li>
+            <% } else { %>
+                <li><a href="/users/login">Iniciar</a> <i class="fas fa-sign-in-alt"></i></li>
+                <br>
+                <li><a href="/users/register">Registrarse</a> <i class="fa fa-id-card"></i></li>
+                <br>
+                <li><a href="/users/cart/:id">Carrito</a> <i class="fas fa-shopping-cart"></i></li>
+            <% } %>
+        </ul>
+    </div>
+</div>
