@@ -1,8 +1,8 @@
 const { NotExtended } = require("http-errors");
 
-function guestMiddlewere() {
+function guestMiddlewere(req, res, next) {
     if (req.session.userLogged == undefined) {
-        next;
+        next();
     } else {
         res.redirect('/users/:id');
     }

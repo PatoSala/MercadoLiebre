@@ -73,6 +73,8 @@ const productsController = {
             return product.id != idProduct;
         });
 
+        console.log(deleteProduct);
+
         deleteProductJSON = JSON.stringify(deleteProduct);
         fs.writeFileSync(__dirname + '/../database/products.json', deleteProductJSON);
         res.send('Producto eliminado');

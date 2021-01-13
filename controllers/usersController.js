@@ -2,7 +2,7 @@ const { v4: uuidv4 } = require('uuid');
 const bcrypt = require('bcrypt');
 const fs = require('fs');
 let users = JSON.parse(fs.readFileSync(__dirname + '/../database/users.json'));
-let cart = JSON.parse(fs.readFileSync(__dirname + '/../database/cart.json'));
+
 
 const usersController = {
 
@@ -80,6 +80,8 @@ const usersController = {
     },
 
     login: (req, res) => {
+        let errors = 'Email o contraseña incorrectos';
+
         for (let i = 0; i < users.length; i++) {
             if (users[i].email == req.body.email) {
                 if (bcrypt.compareSync(req.body.password, users[i].password)) {
@@ -91,7 +93,7 @@ const usersController = {
         }
 
         if (userLogged == undefined) {
-            res.send('Email o contraseña incorrectos');
+            res.render('users/login');
         };
 
         req.session.userLogged = userLogged;

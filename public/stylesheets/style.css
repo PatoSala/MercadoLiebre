@@ -1,6 +1,8 @@
 @import '__generic.css';
 @import '__header.css';
 @import '__headerMobile.css';
+@import '__login.css';
+@import '__register.css';
 
 
 ul {

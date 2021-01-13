@@ -1,0 +1,18 @@
+.registerForm header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 55px;
+    background: #EAC926;
+}
+
+.registerForm header .logo {
+    margin-top: 8px;
+}
+
+.registerForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

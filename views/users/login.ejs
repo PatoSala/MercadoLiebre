@@ -8,26 +8,38 @@
     <title>Login</title>
 </head>
 <body>
-    <h1>Inciar Sesión</h1>
 
-    <form method="POST" action="/users/login">
-        <input type="email" name="email" value="" placeholder="Email">
-        <br>
-        <input type="password" name="password" value="" placeholder="password" id="myInput">
-        <br>
-        <input type="checkbox" onclick="myFunction()">Show Password
-        <script>
-            function myFunction() {
-            var x = document.getElementById("myInput");
-            if (x.type === "password") {
-              x.type = "text";
-            } else {
-              x.type = "password";
+    
+
+    <div class="loginForm">
+
+      <header>
+        <a href="/"><img class="logo" src="/../images/logo-mercado-liebre.svg" width="134px" height="34px"></a>
+      </header>
+
+      <h1>Inciar Sesión</h1>
+
+      <form method="POST" action="/users/login">
+          <input type="email" name="email" value="" placeholder="Email">
+          <br>
+          <input type="password" name="password" value="" placeholder="Password" id="myInput">
+          <br>
+          <input type="checkbox" onclick="myFunction()">Show Password
+          <script>
+              function myFunction() {
+              var x = document.getElementById("myInput");
+              if (x.type === "password") {
+                x.type = "text";
+              } else {
+                x.type = "password";
+              }
             }
-          }
-        </script>
-        <br>
-        <button type="submit">Iniciar</button>
-    </form>
+          </script>
+          <br>
+          <input type="checkbox"> Recordarme
+          <br>
+          <button type="submit">Iniciar</button>
+      </form>
+    </div>
 </body>
 </html>

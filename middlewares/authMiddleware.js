@@ -1,6 +1,6 @@
 function authMiddlewere(req, res, next) {
     if (req.session.userLogged != undefined) {
-        next;
+        next();
     } else {
         res.redirect('/users/login');
     }

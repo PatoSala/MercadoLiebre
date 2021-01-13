@@ -5,13 +5,13 @@
     }
 
     body {
-        width: 375px;
+        width: 100%;
         background: grey;
         
     }
 
     .mobileHeader {
-        width: 375px;
+        width: 100%;
         height: 100px;
         background: #EAC926;
         display: flex;
