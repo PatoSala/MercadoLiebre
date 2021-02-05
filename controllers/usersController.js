@@ -1,6 +1,7 @@
 const { v4: uuidv4 } = require('uuid');
 const bcrypt = require('bcrypt');
 const fs = require('fs');
+const { validationResult } = require('express-validator');
 let users = JSON.parse(fs.readFileSync(__dirname + '/../database/users.json'));
 
 
@@ -15,17 +16,34 @@ const usersController = {
     },
 
     store: (req, res) => {
-        let newUser = {};
-
-            newUser.id = uuidv4();
-            newUser.name = req.body.name;
-            newUser.email = req.body.email;
-            newUser.password = bcrypt.hashSync(req.body.password, 10);
+        let errors = validationResult(req);
         
-        users.push(newUser);
-        usersJSON = JSON.stringify(users);
-        fs.writeFileSync(__dirname + '/../database/users.json', usersJSON);
-        res.send('Usuario creado con éxito!');
+        if (errors.isEmpty()) {
+
+            /* 
+                for (let i = 0; i < users.length; i++) {
+                    if (users[i].email == req.body.email) {
+                        res.render('users/addUser', {errors: errors.errors})
+                    }
+                } 
+            */
+    
+            let newUser = {};
+    
+                newUser.id = uuidv4();
+                newUser.name = req.body.name;
+                newUser.email = req.body.email;
+                newUser.password = bcrypt.hashSync(req.body.password, 10);
+                newUser.op = 0;
+            
+            users.push(newUser);
+            usersJSON = JSON.stringify(users);
+            fs.writeFileSync(__dirname + '/../database/users.json', usersJSON);
+            res.redirect('/users/login');
+        } else {
+            res.render('users/addUser', {errors: errors.errors});
+        }
+        
     },
 
     edit: (req, res) => {
@@ -80,25 +98,30 @@ const usersController = {
     },
 
     login: (req, res) => {
-        let errors = 'Email o contraseña incorrectos';
+        let errors = validationResult(req);
 
-        for (let i = 0; i < users.length; i++) {
-            if (users[i].email == req.body.email) {
-                if (bcrypt.compareSync(req.body.password, users[i].password)) {
-                    var userLogged = users[i];
-                    console.log(users[i]);
-                    break;
+        if (errors.isEmpty()) {
+            for (let i = 0; i < users.length; i++) {
+                if (users[i].email == req.body.email) {
+                    if (bcrypt.compareSync(req.body.password, users[i].password)) {
+                        var userLogged = users[i];
+                        exports.userLogged = userLogged;
+                        console.log(users[i]);
+                        break;
+                    }
                 }
             }
+    
+            /* if (userLogged == undefined) {
+                res.render('users/login', {errors: 'Email o contraseña incorrectos'});
+            }; */
+    
+            req.session.userLogged = userLogged;
+    
+            res.redirect('/');
+        } else {
+            res.render('users/login', {errors: errors.errors});
         }
-
-        if (userLogged == undefined) {
-            res.render('users/login');
-        };
-
-        req.session.userLogged = userLogged;
-
-        res.redirect('/');
     },
 
     cart: (req, res) => {

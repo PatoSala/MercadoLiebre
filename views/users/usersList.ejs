@@ -8,27 +8,41 @@
     <title>Users</title>
 </head>
 <body>
-    <h1>Lista de usuarios registrados:</h1>
 
-    <ul>
-        <% for (let i = 0; i < users.length; i++ ) { %> 
-            <li>
-                id: <%= users[i].id %>
+    <div class="usersList">
+        <header>
+            <a href="/"><img class="logo" src="/../images/logo-mercado-liebre.svg" width="134px" height="34px"></a>
+        </header>
+    
+        <h1>Lista de usuarios registrados:</h1>
+    
+        <ul>
+            <% for (let i = 0; i < users.length; i++ ) { %> 
+                <li>
+                    id: <%= users[i].id %>
+                    <br>
+                    Nombre: <%= users[i].name %>
+                    <br>
+                    Email: <%= users[i].email %>
+                    <br>
+                    Administrador: 
+                        <% if (users[i].op == 1) { %> 
+                            Si
+                        <% } else { %>
+                            No
+                        <% } %>
+                    <br>
+                    <form method="GET" action="/users/edit/<%= users[i].id %>">
+                        <button type="submit">Edit</button>
+                    </form>
+                    <form method="POST" action="/users/delete/<%= users[i].id %>">
+                        <button type="submit">Delete</button>
+                    </form>
+                </li>
                 <br>
-                Nombre: <%= users[i].name %>
-                <br>
-                Email: <%= users[i].email %>
-                <br>
-                Contraseña: <%= users[i].password %>
-                <br>
-                <form method="GET" action="/users/edit/<%= users[i].id %>">
-                    <button type="submit">Edit</button>
-                </form>
-                <form method="POST" action="/users/delete/<%= users[i].id %>">
-                    <button type="submit">Delete</button>
-                </form>
-            </li>
-        <% } %>
-    </ul>
+            <% } %>
+        </ul>
+    </div>
+
 </body>
 </html>

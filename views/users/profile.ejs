@@ -26,6 +26,13 @@
         <form action="/products/create" method="GET">
             <button type="submit">Publicar</button>
         </form>
+
+        <% if (req.session.userLogged.op == 1) { %>
+            <form action="/users/list" method="GET">
+                <button type="submit">Listado de usuarios</button>
+            </form>
+        <% } %>
+
     </div>
 </body>
 </html>

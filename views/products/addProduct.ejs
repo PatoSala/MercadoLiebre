@@ -7,11 +7,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
     <title>Add Product</title>
 </head>
+
+<%- include ./partials/header %>
+
 <body>
     <h1>Añadir producto</h1>
 
     <form action="/products/create" method="POST">
         <input type="text" name="name" placeholder="Nombre del producto" value="">
+        <br>
+        <input type="file" name="img">
         <br>
         <input type="text" name="price" placeholder="$$$" value="">
         <br>

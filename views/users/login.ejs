@@ -17,14 +17,25 @@
         <a href="/"><img class="logo" src="/../images/logo-mercado-liebre.svg" width="134px" height="34px"></a>
       </header>
 
-      <h1>Inciar Sesión</h1>
+      <div class="loginContainer">
+        <h1>Inciar Sesión</h1>
+
+      <% if (typeof errors != 'undefined') { %> 
+        <div class="errors">
+          <ul>
+            <% for (let i = 0; i < errors.length; i++) { %> 
+                <li><p><%= errors[i].msg%></p></li>
+            <% } %>
+          </ul>
+        </div>
+      <% } %>
 
       <form method="POST" action="/users/login">
           <input type="email" name="email" value="" placeholder="Email">
           <br>
           <input type="password" name="password" value="" placeholder="Password" id="myInput">
           <br>
-          <input type="checkbox" onclick="myFunction()">Show Password
+          <input type="checkbox" onclick="myFunction()" class="checkbox">Show Password
           <script>
               function myFunction() {
               var x = document.getElementById("myInput");
@@ -35,11 +46,14 @@
               }
             }
           </script>
-          <br>
-          <input type="checkbox"> Recordarme
+          <input type="checkbox" class="checkbox"> Recordarme
           <br>
           <button type="submit">Iniciar</button>
+          <br>
+          <p><a href="/users/register">No tenés cuenta todavía? Registrarse</a></p>
       </form>
+      </div>
+
     </div>
 </body>
 </html>

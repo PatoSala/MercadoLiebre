@@ -15,4 +15,72 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+}
+
+.registerContainer {
+    margin-top: 70px;
+}
+
+.registerForm input {
+    width: 400px;
+    height: 25px;
+    border-radius: 6px;
+    border-width: 1px;
+    border-color: #979292;
+    border-style: solid;
+    margin-top: 5px;
+}
+
+.registerForm input:hover {
+    border-color: #1c4bcc;
+}
+
+.registerForm input:focus {
+    background: #c1efff;
+    outline-color: #1c4bcc;
+}
+
+.registerForm .checkbox {
+    vertical-align: -3px;
+    width: 20px;
+    height: 20px;
+}
+
+.registerForm button {
+    margin-top: 5px;
+    width: 150px;
+    height: 40px;
+    background: #1c4bcc;
+    border-width: 0px;
+    border-radius: 3px;
+    border-style: solid;
+    color: white;
+}
+.registerForm button:hover {
+    background: #0833aa;
+}
+
+.registerForm .errors {
+    width: 400px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #a01919;
+    border-radius: 3px;
+    color: #a01919;
+    background: #f06f6f;
+    margin-bottom: 0px;
+}
+
+.registerContainer .errors ul {
+    padding: 0px;
+    list-style: none;
+    list-style-position: inside;
+    display: inline;
+}
+
+.registerContainer .errors p {
+    text-align: left;
+    margin: 5px;
+    
 }
